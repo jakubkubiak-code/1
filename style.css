@@ -1,4 +1,4 @@
- body {
+  body {
     Background-color:bisque;
 }
 
@@ -27,61 +27,84 @@ tr {
 }
 #t1 {
     background-color:gold;
+    
+}
+
+#t2 {
+    background-color:deepskyblue;
     text-align: center;
 }
+
 #p1 {
     font-size: 30px;
-    color:black;
+    color:indigo;
     text-align:center;
+    background-color: olivedrab;
 }
+
 #p2 {
     font-size: 20px;
     color:gold;
     text-align:center;
+    background-color:rgb(252, 204, 147);
+    
 }
+
 #p3 {
     font-size: 20px;
     color:deepskyblue;
     text-align:center;
+    background-color:rgb(252, 204, 147);
 }
+
 #h1 {
     Font-size: 100px;
     color:brown;
     text-align: center;
 }
+
 #h2 {
     font-size: 50px;
     color:darkslategray;
     text-align: center;
 }
+
 #z1 {
     font-size: 20px;
     color:black;
     text-align: center;
 }
 
-html, body {
-		margin:0;
-		padding:0;
-		height:100%;
-	}
-	#container {
-		min-height:100%;
-		position:relative;
-	}
-	#header {
-		background:#fbb5b8;
-		padding:10px;
-	}
-	#middle {
-		padding:10px;
-		padding-bottom:60px;	
-	}
-	#footer {
-		position:absolute;
-		bottom:0;
-		width:100%;
-		height:60px;		
-		background:#b5fbbd;
-	}
+#a1 {
+    font-size: 30px;
+    color:brown;
+    text-align: left;
+}
 
+#a2 {
+    font-size: 30px;
+    color:brown;
+    text-align: right;
+}
+
+footer {
+    background-color:black;
+    font-family: 'Times New Roman';
+    
+    
+}
+
+#f1 {
+    font-size:20px ;
+    font-family: tahoma;
+    color:aliceblue;
+    text-align:center;
+
+}
+
+#f2 {
+    font-size: 12px;
+    font-family: tahoma;
+    color:aliceblue;
+    text-align: center;
+}

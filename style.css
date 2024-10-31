@@ -1,4 +1,4 @@
-  body {
+ body {
     Background-color:bisque;
 }
 
@@ -33,28 +33,23 @@ tr {
 #t2 {
     background-color:deepskyblue;
     text-align: center;
+    
 }
 
 #p1 {
     font-size: 30px;
     color:indigo;
     text-align:center;
-    background-color: olivedrab;
+    text-decoration: underline;
+    
 }
 
 #p2 {
     font-size: 20px;
-    color:gold;
-    text-align:center;
-    background-color:rgb(252, 204, 147);
-    
-}
+    color:black;
+    background-color:burlywood;
+    text-align: center;
 
-#p3 {
-    font-size: 20px;
-    color:deepskyblue;
-    text-align:center;
-    background-color:rgb(252, 204, 147);
 }
 
 #h1 {
@@ -107,4 +102,9 @@ footer {
     font-family: tahoma;
     color:aliceblue;
     text-align: center;
+}
+
+fieldset {
+    background-color: burlywood;
+
 }

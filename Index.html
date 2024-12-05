@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <title>Ministrant miesiąca</title>
@@ -10,14 +10,34 @@
             const table = document.getElementById("rankingTable");
             const rows = Array.from(table.rows).slice(1); // Pomijamy nagłówki
 
+            // Sortowanie wierszy po punktach malejąco
             rows.sort((a, b) => {
                 const pointsA = parseInt(a.cells[3].textContent.trim(), 10);
                 const pointsB = parseInt(b.cells[3].textContent.trim(), 10);
-                return pointsB - pointsA; // Sortowanie malejące
+                return pointsB - pointsA;
             });
 
             const tbody = table.tBodies[0];
             rows.forEach(row => tbody.appendChild(row)); // Przenosimy posortowane wiersze do tabeli
+            
+            updatePlaces(rows); // Aktualizacja miejsc
+        }
+
+        // Funkcja do aktualizacji miejsc
+        function updatePlaces(rows) {
+            let currentPlace = 1;
+            let lastPoints = null;
+
+            rows.forEach((row, index) => {
+                const points = parseInt(row.cells[3].textContent.trim(), 10);
+
+                if (lastPoints !== points) {
+                    currentPlace = index + 1; // Nowa pozycja, gdy punkty są inne
+                }
+
+                row.cells[0].textContent = currentPlace; // Aktualizacja kolumny "Miejsce"
+                lastPoints = points;
+            });
         }
 
         // Funkcja wywoływana po załadowaniu strony

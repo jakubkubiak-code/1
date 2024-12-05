@@ -5,29 +5,23 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <script>
-        // Funkcja do sortowania tabeli
         function sortTableByPoints() {
             const table = document.getElementById("rankingTable");
-            const rows = Array.from(table.rows).slice(1); // Pomijamy nagłówki
-
+            const rows = Array.from(table.rows).slice(1); 
             rows.sort((a, b) => {
                 const pointsA = parseInt(a.cells[3].textContent.trim(), 10);
                 const pointsB = parseInt(b.cells[3].textContent.trim(), 10);
-                return pointsB - pointsA; // Sortowanie malejące
+                return pointsB - pointsA; 
             });
-
             const tbody = table.tBodies[0];
-            rows.forEach(row => tbody.appendChild(row)); // Przenosimy posortowane wiersze do tabeli
+            rows.forEach(row => tbody.appendChild(row));
         }
-
-        // Funkcja do aktualizacji miejsc w tabeli
         function updateRanks() {
             const table = document.getElementById("rankingTable");
-            const rows = Array.from(table.rows).slice(1); // Pomijamy nagłówek
+            const rows = Array.from(table.rows).slice(1); 
             let currentRank = 1;
             let previousPoints = null;
             let rankCounter = 0;
-
             rows.forEach(row => {
                 const points = parseInt(row.cells[3].textContent.trim(), 10);
                 if (points !== previousPoints) {
@@ -40,8 +34,6 @@
                 previousPoints = points;
             });
         }
-
-        // Funkcja wywoływana po załadowaniu strony
         document.addEventListener("DOMContentLoaded", () => {
             sortTableByPoints();
             updateRanks();

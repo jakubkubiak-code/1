@@ -1,10 +1,31 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pl">
-    <head>
-        <title>Ministrant miesiąca</title>
-        <meta charset="UTF=8">
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <title>Ministrant miesiąca</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Funkcja do sortowania tabeli
+        function sortTableByPoints() {
+            const table = document.getElementById("rankingTable");
+            const rows = Array.from(table.rows).slice(1); // Pomijamy nagłówki
+
+            rows.sort((a, b) => {
+                const pointsA = parseInt(a.cells[3].textContent.trim(), 10);
+                const pointsB = parseInt(b.cells[3].textContent.trim(), 10);
+                return pointsB - pointsA; // Sortowanie malejące
+            });
+
+            const tbody = table.tBodies[0];
+            rows.forEach(row => tbody.appendChild(row)); // Przenosimy posortowane wiersze do tabeli
+        }
+
+        // Funkcja wywoływana po załadowaniu strony
+        document.addEventListener("DOMContentLoaded", () => {
+            sortTableByPoints();
+        });
+    </script>
+</head>
     <body>
     <h1>Ministrant <br> <a href="http://jan23.info/nowa/"> <img src="jan23.png" width="100" height="100"></a> <br> miesiąca </h1>
     <h3>Grudzień</h3>
@@ -13,13 +34,14 @@
         <table border="3">
 
             <thead id="t2">
-                <tr border="3">
-                <td>Miejsce: </td>
-                <td>Imię i Nazwisko: </td>
-                <td>Funkcja: </td>
-                <td>Punkty: </td>
-                </tr>
+            <tr>
+                <th>Miejsce</th>
+                <th>Imię i Nazwisko</th>
+                <th>Funkcja</th>
+                <th>Punkty</th>
+            </tr>
             </thead>
+
             <tbody>
             <tr id="t1">
                 <td>1 </td>
@@ -114,7 +136,7 @@
         <br><br><br><br><br><br><br>
 
         <footer>
-         <p id="f2">Ministrantom życzę jak najwięcej tytułów :) <p>
+         <p id="f2">Ministrantom życzę jak najwięcej tytułów :) </p>
          </footer>
     </body>
 </html>

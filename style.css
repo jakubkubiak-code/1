@@ -36,6 +36,10 @@ tr {
     
 }
 
+#t3 {
+   border: 3;
+}
+
 #p1 {
     font-size: 30px;
     color:indigo;
